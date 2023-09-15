@@ -1,8 +1,6 @@
 <?php
 
 namespace Database\Seeders;
-
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,11 +10,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $this->command->info('======== Inserting Social Media Platforms Data ========');
+        $this->call(SocialMediaPlatformSeeder::class);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->command->info('======== Inserting Influencers Profiles Data ========');
+        $this->call( SocialMediaProfileSeeder::class);
+
+
     }
 }

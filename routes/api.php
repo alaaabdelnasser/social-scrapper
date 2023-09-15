@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('me',function (){
-   dd('pwd');
+
+
 });
 
 
