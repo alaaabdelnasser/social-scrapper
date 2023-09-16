@@ -12,7 +12,7 @@ jobs:
         with:
           host: 162.241.217.168
           username: wxqbnfmy
-          password: ${{secrets.SSH_PASSWORD}}
+          key: ${{secrets.SSH_KEY}}
           script: |
             cd /home2/wxqbnfmy/forms.codepresso.net
             git reset --hard
