@@ -10,8 +10,8 @@ jobs:
       - name: Deploy Backend
         uses: appleboy/ssh-action@v0.1.4
         with:
-          host: ${{secrets.SSH_HOST}}
-          username: ${{ secrets.SSH_USER }}
+          host: "162.241.217.168"
+          username: "wxqbnfmy"
           password: ${{secrets.SSH_PASSWORD}}
           script: |
             cd /home2/wxqbnfmy/forms.codepresso.net
