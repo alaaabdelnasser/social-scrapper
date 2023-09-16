@@ -8,12 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Backend
-        uses: appleboy/ssh-action@v1.0.0
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
         with:
           host: 162.241.217.168
-          username: wxqbnfmy
+          user: wxqbnfmy
           key: ${{secrets.SSH_KEY}}
-          script: |
+          first_ssh: |
             cd /home2/wxqbnfmy/forms.codepresso.net
             git reset --hard
             git switch master
