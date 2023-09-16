@@ -11,6 +11,7 @@ class InfluencerCollection extends JsonResource
     public function toArray($request): array
     {
         return [
+            "id" => $this->id,
             "fullName" => $this->fullName,
             "country" => $this->country,
             "photo" => $this->photo,
