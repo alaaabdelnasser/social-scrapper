@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('influencer_id');
             $table->bigInteger('followers');
             $table->bigInteger('following');
-
+            $table->string('user_name');
 
             $table->foreign('social_media_platform_id')
                 ->references('id')
