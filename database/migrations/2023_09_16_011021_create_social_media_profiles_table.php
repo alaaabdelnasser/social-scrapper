@@ -8,10 +8,12 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('social_media_profiles', function (Blueprint $table) {
-            $table->unsignedBigInteger('social_media_platform_id');
+            $table->id()->index();
+            $table->unsignedBigInteger('social_media_platform_id')->index();
             $table->unsignedBigInteger('influencer_id');
             $table->bigInteger('followers');
             $table->bigInteger('following');
+
 
             $table->foreign('social_media_platform_id')
                 ->references('id')

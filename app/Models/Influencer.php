@@ -10,6 +10,7 @@ class Influencer extends Model
 {
     use HasFactory;
 
+    protected $with = ['SocialMediaProfiles'];
 
     public function SocialMediaProfiles(): HasMany
     {

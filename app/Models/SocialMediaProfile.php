@@ -12,7 +12,7 @@ class SocialMediaProfile extends Model
 
     protected $guarded = [];
     public $timestamps = false;
-
+    protected $with = ['SocialMediaPlatform'];
 
     public function SocialMediaPlatform(): BelongsTo
     {
