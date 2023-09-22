@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\InstagramService;
+use App\Clients\LaravelHttpClient;
+use App\Services\Instagram\InstagramService;
 use Illuminate\Http\Request;
 
 class ScrappingController extends Controller
@@ -12,15 +13,17 @@ class ScrappingController extends Controller
     public $instagramService;
 
 
-    public function __construct(InstagramService $instagramService)
+    public function __construct()
     {
-        $this->instagramService = $instagramService;
+        $this->instagramService = new InstagramService(new LaravelHttpClient());
+
+
     }
 
     public function index(Request $request, $username)
     {
 
-        dd( $this->instagramService->GetUserProfileInfo($username));
+        dd($this->instagramService->GetUserProfileInfo($username));
 
     }
 }
