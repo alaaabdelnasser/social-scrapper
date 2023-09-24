@@ -10,7 +10,6 @@ class LaravelHttpClient implements HttpClientInterface
 
     public function getRequest($url, $data)
     {
-        dd("I'M LaravelHttpClient");
         Http::get($url, $data);
     }
 

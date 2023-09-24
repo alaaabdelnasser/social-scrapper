@@ -10,6 +10,15 @@ class InstagramService
 {
     private $httpClient;
 
+    private function getHttpHeader(): array
+    {
+        return [
+            'User-Agent' => InstagramConstants::USERAGENT,
+            'Content-Type' => 'application/json'
+        ];
+    }
+
+
     public function __construct(HttpClientInterface $httpClient)
     {
         $this->httpClient = $httpClient;
@@ -17,7 +26,9 @@ class InstagramService
 
     public function GetUserProfileInfo($username)
     {
-        $this->httpClient->getRequest(InstagramConstants::PROFILE_END_POINT . $username, []);
+
+        $this->httpClient->setHeaders($this->getHttpHeader());
+        $this->httpClient->getRequest(InstagramConstants::PROFILE_END_POINT, ['username' => $username]);
     }
 
 

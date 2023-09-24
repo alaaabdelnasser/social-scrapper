@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\InfluencerController;
+use App\Http\Controllers\ScrappingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,14 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group.Make something great!
 |
 */
+
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
 Route::prefix('instagram')->name('instagram')
     ->group(function () {
-        Route::get('/user-profile/{username}', [\App\Http\Controllers\ScrappingController::class, 'index']);
+        Route::get('/user-profile/{username}', [ScrappingController::class, 'index']);
 
     });
 Route::prefix('influencer')->name('influencer')
@@ -29,6 +35,4 @@ Route::prefix('influencer')->name('influencer')
 
 
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+
