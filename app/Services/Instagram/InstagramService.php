@@ -6,6 +6,7 @@ namespace App\Services\Instagram;
 
 use App\Clients\Contracts\HttpClientInterface;
 
+
 class InstagramService
 {
     private $httpClient;
@@ -28,7 +29,9 @@ class InstagramService
     {
 
         $this->httpClient->setHeaders($this->getHttpHeader());
-        $this->httpClient->getRequest(InstagramConstants::PROFILE_END_POINT, ['username' => $username]);
+      $this->httpClient->getRequest(InstagramConstants::PROFILE_END_POINT, ['username' => $username]);
+
+
     }
 
 

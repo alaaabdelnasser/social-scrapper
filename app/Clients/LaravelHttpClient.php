@@ -18,4 +18,9 @@ class LaravelHttpClient implements HttpClientInterface
         Http::post($url, $data);
 
     }
+
+    public function setHeaders($headers)
+    {
+
+    }
 }

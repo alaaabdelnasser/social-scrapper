@@ -22,9 +22,29 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::prefix('instagram')->name('instagram')
     ->group(function () {
-        Route::get('/user-profile/{username}', [ScrappingController::class, 'index']);
+        Route::get('/user-profile/{username}', [ScrappingController::class, 'getInstagramProfile']);
 
     });
+
+Route::prefix('twitter')->name('twitter')
+    ->group(function () {
+        Route::get('/user-profile/{username}', [ScrappingController::class, 'getTwitterProfile']);
+    });
+Route::prefix('tiktok')->name('tiktok')
+    ->group(function () {
+        Route::get('/user-profile/{username}', [ScrappingController::class, 'getTiktokProfile']);
+    });
+Route::prefix('snapchat')->name('snapchat')
+    ->group(function () {
+        Route::get('/user-profile/{username}', [ScrappingController::class, 'getSnapchatProfile']);
+    });
+
+Route::prefix('youtube')->name('youtube')
+    ->group(function () {
+        Route::get('/user-profile/{username}', [ScrappingController::class, 'getYoutubeProfile']);
+    });
+
+
 Route::prefix('influencer')->name('influencer')
     ->group(function () {
         Route::get('list', [InfluencerController::class, 'GetAllInfluencers']);

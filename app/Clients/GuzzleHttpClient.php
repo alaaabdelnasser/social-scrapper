@@ -25,7 +25,6 @@ class GuzzleHttpClient implements HttpClientInterface
                 'headers' => $this->headers,
                 'query' => $data
             ]);
-
         return $response->getBody()->getContents();
     }
 
