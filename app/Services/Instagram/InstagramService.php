@@ -29,8 +29,8 @@ class InstagramService
     {
 
         $this->httpClient->setHeaders($this->getHttpHeader());
-      $this->httpClient->getRequest(InstagramConstants::PROFILE_END_POINT, ['username' => $username]);
 
+         return json_decode($this->httpClient->getRequest(InstagramConstants::PROFILE_END_POINT, ['username' => $username]),true) ;
 
     }
 

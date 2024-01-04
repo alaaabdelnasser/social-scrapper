@@ -37,8 +37,9 @@ class ScrappingController extends Controller
 
     public function getInstagramProfile(Request $request, $username)
     {
+        
+     return $this->instagramService->GetUserProfileInfo($username)['data']['user']['edge_follow'];
 
-      $this->instagramService->GetUserProfileInfo($username);
 
 
     }
